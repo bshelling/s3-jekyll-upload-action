@@ -15,10 +15,10 @@ If the action is private, clone the action to the ./github directory
 ```
 /.github
     |-> actions
-        |-> s3upload-ation
+        |-> s3jekyllupload-action
 ```
 ```
-- uses: ./.github/actions/s3upload-action
+- uses: ./.github/actions/s3jekyllupload-action
     with:
         keyid: ${{secrets.KEY}}
         accesskey: ${{secrets.ACCESS_KEY}}
