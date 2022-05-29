@@ -1,0 +1,36 @@
+name: 'S3 Bucket Upload Action'
+description: 'Action for uploading assets to an s3 bucket'
+branding:
+  icon: 'upload'
+  color: 'orange'
+inputs:
+  keyid:
+    description: "keyid"
+    required: true
+  accesskey:
+    description: "accesskey"
+    required: true
+  region:
+    description: "region"
+    required: true
+  filepath:
+    description: "file path"
+    required: true
+  bucket:
+    description: "bucket"
+    required: true
+  exclusion:
+    description: "exclusion"
+    required: true
+
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.keyid }}
+    - ${{ inputs.accesskey }}
+    - ${{ inputs.region }}
+    - ${{ inputs.filepath }}
+    - ${{ inputs.bucket }}
+    - ${{ inputs.exclusion }}
