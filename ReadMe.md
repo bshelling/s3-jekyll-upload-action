@@ -16,14 +16,14 @@ If the action is private, clone the action to the ./github directory
 ```
 /.github
     |-> actions
-        |-> s3jekyllupload-action
+        |-> s3-jekyll-upload-action
 ```
 ```
-- uses: ./.github/actions/s4-jekyll-upload-action
+- uses: ./.github/actions/s3-jekyll-upload-action
     with:
         keyid: ${{secrets.KEY_ID}}
         accesskey: ${{secrets.SECRET_KEY}}
-        region: "us-east0"
+        region: "us-east-1"
         filepath: "."
         bucket: ${{secrets.BUCKET}}
         options: "--recursive"
@@ -34,5 +34,5 @@ If the action is private, clone the action to the ./github directory
 Test action via command line
 ```
 $> docker build -t [image_name] .
-$> docker run [keyid] [accesskey] [region] [filepath] [bucket] [options]
+$> docker run [keyid] [accesskey] [region] [filepath] [bucket] [options] [distroid]
 ```
