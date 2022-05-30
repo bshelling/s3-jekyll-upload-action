@@ -1,4 +1,4 @@
-name: 'S3 Bucket Upload Action'
+name: 'S3 Bucket Jekyll Upload Action'
 description: 'Action for uploading Jekyll build assets to an s3 bucket'
 branding:
   icon: 'upload'
