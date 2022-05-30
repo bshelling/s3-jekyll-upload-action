@@ -1,5 +1,5 @@
 name: 'S3 Bucket Upload Action'
-description: 'Action for uploading assets to an s3 bucket'
+description: 'Action for uploading Jekyll build assets to an s3 bucket'
 branding:
   icon: 'upload'
   color: 'orange'
@@ -20,7 +20,7 @@ inputs:
     description: "bucket"
     required: true
   options:
-    description: "exclusion"
+    description: "options"
     required: true
   distroid:
     description: "distribution id"
