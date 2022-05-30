@@ -19,9 +19,13 @@ inputs:
   bucket:
     description: "bucket"
     required: true
-  exclusion:
+  options:
     description: "exclusion"
     required: true
+  distroid:
+    description: "distribution id"
+    required: true
+
 
 
 runs:
@@ -33,4 +37,5 @@ runs:
     - ${{ inputs.region }}
     - ${{ inputs.filepath }}
     - ${{ inputs.bucket }}
-    - ${{ inputs.exclusion }}
+    - ${{ inputs.options }}
+    - ${{ inputs.distroid }}

@@ -8,6 +8,7 @@ Action for uploading Jekyll build assets to an s3 bucket
 - Filepath 
 - Bucket
 - Options
+- Cloudfront Distribution ID
 
 
 ## Workflow usage
@@ -18,14 +19,15 @@ If the action is private, clone the action to the ./github directory
         |-> s3jekyllupload-action
 ```
 ```
-- uses: ./.github/actions/s3jekyllupload-action
+- uses: ./.github/actions/s4-jekyll-upload-action
     with:
-        keyid: ${{secrets.KEY}}
-        accesskey: ${{secrets.ACCESS_KEY}}
-        region: "us-east-1"
+        keyid: ${{secrets.KEY_ID}}
+        accesskey: ${{secrets.SECRET_KEY}}
+        region: "us-east0"
         filepath: "."
-        bucket: "s3://test-bucket"
+        bucket: ${{secrets.BUCKET}}
         options: "--recursive"
+        distroid: ${{secrets.DISTRO_ID}}
 ```
 
 ## Testing
