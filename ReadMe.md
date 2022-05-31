@@ -10,6 +10,28 @@ Action for uploading Jekyll build assets to an s3 bucket
 - Options
 - Cloudfront Distribution ID
 
+## Deployment user policy
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:ListBucket",
+                "s3:DeleteObject",
+                "cloudfront:CreateInvalidation"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*/*",
+                "arn:aws:cloudfront::0000000000:distribution/[distributionId]"
+            ]
+        }
+    ]
+}
+```
 
 ## Workflow usage
 If the action is private, clone the action to the ./github directory
